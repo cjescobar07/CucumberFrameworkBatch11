@@ -6,9 +6,11 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import pages.AddNewEmployeePage;
 import utils.CommonMethods;
 import utils.Constants;
 import utils.ExcelReading;
+import utils.GlobalVariables;
 
 import java.util.Iterator;
 import java.util.List;
@@ -214,6 +216,15 @@ public class AddEmployeeSteps extends CommonMethods {
         }
 
 
+    }
+
+    @When("capture the employee id")
+    public void capture_the_employee_id() {
+        AddNewEmployeePage ad=new AddNewEmployeePage();
+        GlobalVariables.emp_id=ad.empIdLoc.getAttribute("value");
+        GlobalVariables.firstName=ad.firstName.getAttribute("value");
+        System.out.println("Emp_id "+GlobalVariables.emp_id);
+        System.out.println("firstName "+GlobalVariables.firstName);
     }
 
 }

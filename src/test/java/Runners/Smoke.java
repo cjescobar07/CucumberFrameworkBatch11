@@ -15,13 +15,13 @@ import org.junit.runner.RunWith;
         //if we set it to true, it will quickly scan all gherkin steps whether they are implemented or not
         //if it is set to true, it stops actual execution
         //to execute script, it should be set to false
-        dryRun = false,
+        dryRun = true,
         //it means the console output for cucumber test is having some irrelavant information
         //when we set it to true, it simply removes all the irrelevant information from the console
         monochrome = true,
 
         //tags will identify the scenario based on the tag we provide to the feature file
-        tags = "@batch11",
+        tags = "@db",
         plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json",
                 //this failed.txt file holds all the scenarios which are failed during execution
                 "rerun:target/failed.txt"
