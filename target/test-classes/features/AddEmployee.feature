@@ -45,7 +45,7 @@ Feature: Add employees
 
      @db
      Scenario: Front end and backend Testing
-       When user enters direct data "Steven" "Olg" and "King"
+       When user enters direct data "Bla" "Olga" and "Bla"
        And capture the employee id
        And user clicks on save button
        And employee added successfully
