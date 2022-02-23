@@ -20,7 +20,6 @@ public class ExcelReading {
 
 
     public static void openExcel(String filePath){
-
         try {
             FileInputStream fis = new FileInputStream(filePath);
             book = new XSSFWorkbook(fis);
