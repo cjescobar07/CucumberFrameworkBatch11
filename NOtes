@@ -212,7 +212,7 @@ POM - Page object model design pattern
  According to this pattern, every single page in the application should have a respective class in the project
  We add all the locators and functions related to the specific page in its class
 
-
+class 5 -
 JAVA REST ASSURED API -
 
 Rest web service allows data to be sent in JSON object
@@ -235,6 +235,61 @@ base uri - url
 end point
 headers - token, content type
 query parameter
+
+
+Class 6 -
+
+recap -
+
+sample test -
+getting an employee details using api
+
+given
+BaseURI - base url
+headers - content type, authorization
+query parameter
+
+when keyword we use to hit the end point
+
+then - for verification and validation
+
+@Test - junit
+
+Hamcrest Matchers-
+
+Class contains methods to perform assertions
+
+JsonPath vs jsonPath()
+
+JsonPath is class -
+jsonPath() is a method that belongs to JsonPath class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
