@@ -235,4 +235,12 @@ public class AddEmployeeSteps extends CommonMethods {
         //System.out.println("First Name from GUI "+GlobalVariables.firstName);
         Assert.assertEquals(firstNameFromDb,GlobalVariables.firstName);
     }
+
+    @Then("verify the results from front end and Backend")
+    public void verify_the_results_from_front_end_and_backend() {
+        String firstNameFromDb=GlobalVariables.tableData.get(0).get("employee_id");
+        Assert.assertEquals(firstNameFromDb,GlobalVariables.emp_id);
+    }
+
+
 }

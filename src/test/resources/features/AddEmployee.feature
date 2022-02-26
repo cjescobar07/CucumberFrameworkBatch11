@@ -52,5 +52,11 @@ Feature: Add employees
        And query the information from backend
        Then verify the results from UI and Backend
 
-
-
+       @employee_Id
+       Scenario: Testing the Employee Ids are being stored inside the Employee_id in hs_hr_employees Table
+         When user enters direct data "Blahahha" "Olga" and "Bla"
+         And capture the employee id
+         And user clicks on save button
+         And employee added successfully
+         And query the information from backend
+         Then verify the results from front end and Backend
