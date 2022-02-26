@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 4138831100,
+              "duration": 4079646500,
               "status": "passed"
             },
             "line": 4,
@@ -24,7 +24,7 @@
         ]
       },
       {
-        "start_timestamp": "2022-02-26T17:48:36.542Z",
+        "start_timestamp": "2022-02-26T19:34:03.286Z",
         "line": 7,
         "name": "create an employee via API work flow",
         "description": "",
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 11964100,
+              "duration": 4001700,
               "status": "passed"
             },
             "line": 8,
@@ -46,7 +46,7 @@
           },
           {
             "result": {
-              "duration": 586113100,
+              "duration": 572007200,
               "status": "passed"
             },
             "line": 9,
@@ -58,7 +58,7 @@
           },
           {
             "result": {
-              "duration": 63994800,
+              "duration": 68000000,
               "status": "passed"
             },
             "line": 10,
@@ -76,7 +76,7 @@
           },
           {
             "result": {
-              "duration": 127996000,
+              "duration": 148772700,
               "status": "passed"
             },
             "line": 11,
@@ -98,7 +98,7 @@
           },
           {
             "result": {
-              "duration": 31015800,
+              "duration": 22687300,
               "status": "passed"
             },
             "line": 12,
@@ -112,6 +112,149 @@
               ],
               "location": "APISteps.APIWorkFlowSteps.the_employee_id_is_stored_as_a_global_variable_to_be_used_for_other_calls(java.lang.String)"
             },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@WorkFlow"
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 612105900,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "a JWT bearer token is generated",
+            "match": {
+              "location": "APISteps.GenerateTokenSteps.a_jwt_bearer_token_is_generated()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-02-26T19:34:08.292Z",
+        "line": 15,
+        "name": "Retrieving recently created employee",
+        "description": "",
+        "id": "syntax-api-workflow-for-hrms;retrieving-recently-created-employee",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 10984500,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "a request is prepared to get the created employee using api call",
+            "match": {
+              "location": "APISteps.APIWorkFlowSteps.a_request_is_prepared_to_get_the_created_employee_using_api_call()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 646606500,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "a GET call is made to retrieve the created employee",
+            "match": {
+              "location": "APISteps.APIWorkFlowSteps.a_get_call_is_made_to_retrieve_the_created_employee()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2020500,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "the status code for this employee is 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 37
+                }
+              ],
+              "location": "APISteps.APIWorkFlowSteps.the_status_code_for_this_employee_is(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 26008900,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "the employee data we get having ID \"employee.employee_id\" must match with the globally stored employee id",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"employee.employee_id\"",
+                  "offset": 35
+                }
+              ],
+              "location": "APISteps.APIWorkFlowSteps.the_employee_data_we_get_having_id_must_match_with_the_globally_stored_employee_id(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 53852100,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "the retrieved data at \"employee\" object matches the data used to create an employee with employee id \"employee.employee_id\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"employee\"",
+                  "offset": 22
+                },
+                {
+                  "val": "\"employee.employee_id\"",
+                  "offset": 101
+                }
+              ],
+              "location": "APISteps.APIWorkFlowSteps.the_retrieved_data_at_object_matches_the_data_used_to_create_an_employee_with_employee_id(java.lang.String,java.lang.String,io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "emp_firstname",
+                  "emp_lastname",
+                  "emp_middle_name",
+                  "emp_gender",
+                  "emp_birthday",
+                  "emp_status",
+                  "emp_job_title"
+                ]
+              },
+              {
+                "cells": [
+                  "Aymat",
+                  "tata",
+                  "MS",
+                  "Male",
+                  "1988-02-28",
+                  "Employee",
+                  "QA"
+                ]
+              }
+            ],
             "keyword": "And "
           }
         ],
