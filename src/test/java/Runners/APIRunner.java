@@ -19,7 +19,7 @@ import org.junit.runner.RunWith;
         //when we set it to true, it simply removes all the irrelevant information from the console
         monochrome = true,
         //tags will identify the scenario based on the tag we provide to the feature file
-        tags = "@WorkFlow",
+        tags = "@update",
         plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json"
                 //this failed.txt file holds all the scenarios which are failed during execution
         }
