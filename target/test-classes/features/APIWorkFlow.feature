@@ -21,8 +21,6 @@ Feature: Syntax API workflow for HRMS
     |emp_firstname|emp_lastname|emp_middle_name|emp_gender|emp_birthday|emp_status|emp_job_title|
     |Aymat        |tata        |MS             |Male      |1988-02-28  |Employee  |QA           |
 
-
-
   @JsonWorkflow
   Scenario: create an employee via API work flow using json
     Given a request is prepared for creating an employee via json payload
