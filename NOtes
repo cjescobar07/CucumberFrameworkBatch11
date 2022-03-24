@@ -264,6 +264,24 @@ JsonPath vs jsonPath()
 JsonPath is class -
 jsonPath() is a method that belongs to JsonPath class
 
+Class 7 -
+
+Recap -
+
+Create
+Retrieving
+Updating
+
+JsonPath - it is a class
+JsonPath() - Json
+
+
+BaseURI = Base URL
+
+given = prepare the request
+when = to hit the endpoint
+then = response/validation
+
 
 
 

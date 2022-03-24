@@ -1,6 +1,7 @@
 package API;
 
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
@@ -16,7 +17,7 @@ import static org.hamcrest.Matchers.*;
 public class HardCodedExamples {
 
     String baseURI = RestAssured.baseURI = "http://hrm.syntaxtechs.net/syntaxapi/api";
-    String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NDU2NjMyMDksImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTY0NTcwNjQwOSwidXNlcklkIjoiMzQzOSJ9.48fq-4eTyRG0yWZcS8VpIaJ-qs53FXpdYjElX-5WHrI";
+    String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NDU4ODg3OTYsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTY0NTkzMTk5NiwidXNlcklkIjoiMzQzOSJ9.Cgh0flgdbibx0W478Qm3ZGy9PQD2Az6Ee7_psdzSU5Y";
     static String employee_id;
 
     @Test
@@ -120,7 +121,31 @@ public class HardCodedExamples {
 
         String middleName = response.jsonPath().getString("employee.emp_middle_name");
         Assert.assertTrue(middleName.contentEquals("MSA"));
+    }
 
+
+    @Test
+    public void eGetAllEmployees(){
+
+        RequestSpecification preparedRequest = given().header("Authorization", token).
+                header("Content-Type", "application/json");
+
+        Response response = preparedRequest.when().get("/getAllEmployees.php");
+
+        String allEmployees = response.prettyPrint();
+
+        //creating the object of jsonpath class
+        JsonPath js = new JsonPath(allEmployees);
+
+        //retrieving the number of employees in response body
+        int count = js.getInt("Employees.size()");
+        System.out.println(count);
+
+        //print all the employee id's from response
+        for (int i =0; i<count; i++){
+           String employeeIds =  js.getString("Employees["+ i +"].employee_id");
+            System.out.println(employeeIds);
+        }
     }
 
 }
